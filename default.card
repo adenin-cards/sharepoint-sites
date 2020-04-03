@@ -16,22 +16,29 @@ properties:
     xtype: at-core-view
     model: 
     view: |
-      <div class="layout-vertical layout-center-center m">
+      <div class="layout-horizontal layout-wrap layout-center-center m">
       	{% for item in items %}
       		<a href="{{item.link}}" class="site-container layout-vertical msm" target="_blank">
       			<div class="sharepoint-bar"></div>
-      			<div class="layout-horizontal psm">
-      				<iron-image src="{{item.thumbnail}}" preload sizing="contain" class="sharepoint-avatar"></iron-image>
-      				<div class="sharepoint-title plsm ptsm">{{item.title}}</div>
+      			<div class="layout-vertical psm">
+      				<iron-image src="{{item.thumbnail}}" preload sizing="cover" class="sharepoint-avatar"></iron-image>
+      				<div class="sharepoint-title">{{item.title}}</div>
+      				<div class="sharepoint-body">{{item.description}}</div>
       			</div>
       		</a>
       	{% endfor %}
+        {% if _remainders.length > 0 %}
+      		{% for remainder in _remainders %}
+        		<div class="site-container msm" style="visibility:hidden"></div>
+        	{% endfor %} 
+        {% endif %}
       </div>
 
       <style>
         .site-container {
       		border: 1px solid #e6e6e6;
-      		width: 360px;
+      		height: 115px;
+      		width: 100px;
       	}
 
       	.sharepoint-avatar {
@@ -39,17 +46,15 @@ properties:
       		box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
       		width: 48px;
       		height: 48px;
-          z-index: 1;
       	}
 
         .sharepoint-title {
-        	font-size: 18px;
+        	font-size: 17px;
           font-weight: 400;
           margin-top: 4px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          z-index: 1;
         }
 
         .sharepoint-body {
@@ -59,8 +64,8 @@ properties:
 
         .sharepoint-bar {
           position: absolute;
-          height: 16px;
-          width: 358px;
+          height: 32px;
+          width: 98px;
           background-color: #e5e5ea;
         }
       </style>
@@ -80,10 +85,9 @@ properties:
     model: 
     modelBind: 'label: linkLabel, href: link'
 $meta:
-  cardId: !!int 19
+  cardId: 19
   preview-data: |-
     {
-      "thumbnail": "http://localhost/components-1.7.0.1464.x2dvjc81kuq6tdomaqz06w33va2ynm6i/custom-theme/default-card-logo.svg",
       "title": "Trending Sites",
       "link": "https://office.com/launch/sharepoint",
       "linkLabel": "Go to Sharepoint",
@@ -93,7 +97,7 @@ $meta:
           "title": "HR (UK)",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/HR",
-          "thumbnail": "http://67f8473b.ngrok.io/avatar/HR?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/HR?size=48&fontSize=56",
           "imageIsAvatar": true
         },
         {
@@ -101,7 +105,7 @@ $meta:
           "title": "adenin Team Site",
           "description": "Site",
           "link": "https://adenin.sharepoint.com",
-          "thumbnail": "http://67f8473b.ngrok.io/avatar/aTS?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/aTS?size=48&fontSize=56",
           "imageIsAvatar": true
         },
         {
@@ -109,7 +113,7 @@ $meta:
           "title": "Cisco POC",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/CiscoPOC",
-          "thumbnail": "http://67f8473b.ngrok.io/avatar/CP?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/CP?size=48&fontSize=56",
           "imageIsAvatar": true
         },
         {
@@ -117,7 +121,7 @@ $meta:
           "title": "Legal",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/Legal",
-          "thumbnail": "http://67f8473b.ngrok.io/avatar/L?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/L?size=48&fontSize=56",
           "imageIsAvatar": true
         },
         {
@@ -125,7 +129,7 @@ $meta:
           "title": "TeamTest",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/TeamTest",
-          "thumbnail": "http://67f8473b.ngrok.io/avatar/T?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/T?size=48&fontSize=56",
           "imageIsAvatar": true
         }
       ],
@@ -133,7 +137,7 @@ $meta:
         {}
       ],
       "_settings": {},
-      "_hash": "439b092e94837b4505f04b0d3c39f12e"
+      "_hash": "475ada092bd9a041060944f048055294"
     }
   preview-mode: live
   preview-container: event

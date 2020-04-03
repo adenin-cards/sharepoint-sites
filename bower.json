@@ -1,6 +1,6 @@
 {
   "name": "sharepoint-sites",
-  "version": "0.0.1.114",
+  "version": "0.0.1.120",
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master"
