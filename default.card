@@ -1,0 +1,147 @@
+$type: card
+rules: []
+properties:
+  title:
+    type: element
+    xtype: at-carbon-card-title
+    title: title
+    xgridcols: 12
+    xstyle: 
+    xclass: 
+    actionListeners:
+      - _start
+    model: 
+  content:
+    type: element
+    xtype: at-core-view
+    model: 
+    view: |
+      <div class="layout-vertical layout-center-center m">
+      	{% for item in items %}
+      		<a href="{{item.link}}" class="site-container layout-vertical msm" target="_blank">
+      			<div class="sharepoint-bar"></div>
+      			<div class="layout-horizontal psm">
+      				<iron-image src="{{item.thumbnail}}" preload sizing="contain" class="sharepoint-avatar"></iron-image>
+      				<div class="sharepoint-title plsm ptsm">{{item.title}}</div>
+      			</div>
+      		</a>
+      	{% endfor %}
+      </div>
+
+      <style>
+        .site-container {
+      		border: 1px solid #e6e6e6;
+      		width: 360px;
+      	}
+
+      	.sharepoint-avatar {
+      		border: 1px solid white;
+      		box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+      		width: 48px;
+      		height: 48px;
+          z-index: 1;
+      	}
+
+        .sharepoint-title {
+        	font-size: 18px;
+          font-weight: 400;
+          margin-top: 4px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          z-index: 1;
+        }
+
+        .sharepoint-body {
+        	font-size: 14px;
+          font-weight: 400;
+        }
+
+        .sharepoint-bar {
+          position: absolute;
+          height: 16px;
+          width: 358px;
+          background-color: #e5e5ea;
+        }
+      </style>
+    xgridcols: 12
+    xstyle: overflow-y:auto;max-height:300px;
+    xclass: 
+    actionListeners:
+      - _all
+    default: 
+    value: 
+    modelRoot: state.model
+  footer3:
+    type: element
+    title: Card Footer 3
+    xtype: at-carbon-card-footer
+    xgridcols: 12
+    model: 
+    modelBind: 'label: linkLabel, href: link'
+$meta:
+  cardId: !!int 19
+  preview-data: |-
+    {
+      "thumbnail": "http://localhost/components-1.7.0.1464.x2dvjc81kuq6tdomaqz06w33va2ynm6i/custom-theme/default-card-logo.svg",
+      "title": "Trending Sites",
+      "link": "https://office.com/launch/sharepoint",
+      "linkLabel": "Go to Sharepoint",
+      "items": [
+        {
+          "id": "AdABCHdGgDJOulABhLp-xSlZmHn0DSCnRol-nb0zx2p0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAQh3RoAyTrpQAYS6fsUpBQ",
+          "title": "HR (UK)",
+          "description": "Site",
+          "link": "https://adenin.sharepoint.com/sites/HR",
+          "thumbnail": "http://67f8473b.ngrok.io/avatar/HR?color=1e4471&size=48&fontSize=64",
+          "imageIsAvatar": true
+        },
+        {
+          "id": "Acwybk3au91LmZr5FhZrnrOGf16sjQgbTZLUZPakr1BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMMm5N2rvdS5ma-RYWa56zBA",
+          "title": "adenin Team Site",
+          "description": "Site",
+          "link": "https://adenin.sharepoint.com",
+          "thumbnail": "http://67f8473b.ngrok.io/avatar/aTS?color=1e4471&size=48&fontSize=64",
+          "imageIsAvatar": true
+        },
+        {
+          "id": "AeGKRW8CO8tEjfjn2mOuNq4frS63i_MWQaqS3fRBG7l5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADhikVvAjvLRI3459pjrjauBQ",
+          "title": "Cisco POC",
+          "description": "Site",
+          "link": "https://adenin.sharepoint.com/sites/CiscoPOC",
+          "thumbnail": "http://67f8473b.ngrok.io/avatar/CP?color=1e4471&size=48&fontSize=64",
+          "imageIsAvatar": true
+        },
+        {
+          "id": "AZvYHA-JCx1NilhB0xQQVL0frS63i_MWQaqS3fRBG7l5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACb2BwPiQsdTYpYQdMUEFS9BQ",
+          "title": "Legal",
+          "description": "Site",
+          "link": "https://adenin.sharepoint.com/sites/Legal",
+          "thumbnail": "http://67f8473b.ngrok.io/avatar/L?color=1e4471&size=48&fontSize=64",
+          "imageIsAvatar": true
+        },
+        {
+          "id": "AW-kiRg2-4FFtYOBDFI3mpvv9w-pxzPCQ4QEZ2d3o6uOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvpIkYNvuBRbWDgQxSN5qbBQ",
+          "title": "TeamTest",
+          "description": "Site",
+          "link": "https://adenin.sharepoint.com/sites/TeamTest",
+          "thumbnail": "http://67f8473b.ngrok.io/avatar/T?color=1e4471&size=48&fontSize=64",
+          "imageIsAvatar": true
+        }
+      ],
+      "_remainders": [
+        {}
+      ],
+      "_settings": {},
+      "_hash": "439b092e94837b4505f04b0d3c39f12e"
+    }
+  preview-mode: live
+  preview-container: event
+  search-term: 
+  service-url: 
+  xclass: 
+  xstyle: 
+  code: |-
+    action.initialize = function(evt) {
+      //debugger;
+    }

@@ -1,0 +1,65 @@
+contentType: Card
+title: Sharepoint Sites
+name: sharepoint-sites
+CollectionModeField: null
+MaxItemsField: null
+PriorityField: null
+StreamSource: null
+CardComponent: sharepoint-sites/sharepoint-sites-card
+StoreMetadataField: null
+CommonPart:
+  Owner: !!int 2
+  Container: null
+  CreatedUtc: 2020-04-02T11:23:43.7104647Z
+  PublishedUtc: 2020-04-02T11:23:43.7244268Z
+  ModifiedUtc: 2020-04-02T11:23:43.7104647Z
+  VersionCreatedUtc: 2020-04-02T11:23:43.0000000
+  VersionPublishedUtc: 2020-04-02T11:23:43.0000000
+  VersionModifiedUtc: 2020-04-02T11:23:43.0000000
+ServicePart:
+  ConnectorTypeName: ScriptConnector
+  ConnectorTypeId: !!int 15
+  ConnectorName: ms-graph
+  ServiceName: sites-trending
+  Url: ~/api/adenin.GateKeeper.Connector/ms-graph/sites-trending
+  ServiceParameters: '{}'
+SearchContextPart:
+  Query: null
+  Interface: null
+CommandPart:
+  CommandType: None
+  Command: 
+  DefaultDate: null
+  Intent: null
+  Ext: {}
+AppPart:
+  App: null
+  Url: 
+  ExtUrl: 
+  Priority: !!int 0
+  AppFaceId: !!int 0
+  Category: orange
+  Icon: now:search
+  CSSClasses: null
+  Enabled: !!bool false
+  NewWindow: !!bool false
+  UrlWithId: !!bool true
+  AvailableAppFaceRecords: null
+  HasPattern: !!bool false
+RoleViewPermissionsPart:
+  AllowedRoles:
+    - Authenticated
+  Audiences: []
+  Mandatory: False
+RecurringTaskPart:
+  Schedule: '- - - - -'
+  ActivityType: adenin.Now.Activities.CardTask.UpdateCard
+  StartDateUtc: null
+  EndDateUtc: null
+  NextOccurrenceUtc: null
+  Priority: !!int 5
+  Status: Enabled
+  NowFlag: 0
+  LastExecutionUTC: null
+  EnableWebHook: !!bool false
+  WebHookToken: null
