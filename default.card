@@ -21,7 +21,12 @@ properties:
       		<a href="{{item.link}}" class="site-container layout-vertical msm" target="_blank">
       			<div class="layout-horizontal psm">
       				<iron-image src="{{item.thumbnail}}" preload sizing="contain" class="sharepoint-avatar"></iron-image>
-      				<div class="sharepoint-title pl ptsm">{{item.title}}</div>
+      				<div class="layout-vertical layout-center-justified pl">
+      					<div class="sharepoint-title">{{item.title}}</div>
+      					{% if item.date %}
+      						<div>Updated <at-carbon-moment datetime="{{ item.date }}" from-now ago auto-refresh></at-carbon-moment></div>
+      					{% endif %}
+      				</div>
       			</div>
       		</a>
       	{% endfor %}
@@ -41,7 +46,6 @@ properties:
         .sharepoint-title {
         	font-size: 18px;
           font-weight: 400;
-          margin-top: 4px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -67,54 +71,53 @@ $meta:
   cardId: !!int 19
   preview-data: |-
     {
-      "thumbnail": "http://localhost/components-1.7.0.1464.2t4n5tijntdyvv3pvsvq69qiq3nz8d1l/sharepoint-sites/SharePoint.png",
       "title": "Trending Sites",
       "link": "https://office.com/launch/sharepoint",
       "linkLabel": "Go to Sharepoint",
       "items": [
         {
-          "id": "AdABCHdGgDJOulABhLp-xSlZmHn0DSCnRol-nb0zx2p0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQAQh3RoAyTrpQAYS6fsUpBQ",
+          "id": "adenin.sharepoint.com,770801d0-8046-4e32-ba50-0184ba7ec529,f4799859-200d-46a7-897e-9dbd33c76a74",
           "title": "HR (UK)",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/HR",
-          "thumbnail": "https://app.adenin.com/avatar/HR?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/HR?color=1e4471&size=52&fontSize=64",
           "imageIsAvatar": true
         },
         {
-          "id": "Acwybk3au91LmZr5FhZrnrOGf16sjQgbTZLUZPakr1BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMMm5N2rvdS5ma-RYWa56zBA",
+          "id": "adenin.sharepoint.com,4d6e32cc-bbda-4bdd-999a-f916166b9eb3,ac5e7f86-088d-4d1b-92d4-64f6a4af504b",
           "title": "adenin Team Site",
           "description": "Site",
           "link": "https://adenin.sharepoint.com",
-          "thumbnail": "https://app.adenin.com/avatar/aTS?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/aTS?color=1e4471&size=52&fontSize=64",
           "imageIsAvatar": true
         },
         {
-          "id": "AeGKRW8CO8tEjfjn2mOuNq4frS63i_MWQaqS3fRBG7l5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADhikVvAjvLRI3459pjrjauBQ",
+          "id": "adenin.sharepoint.com,6f458ae1-3b02-44cb-8df8-e7da63ae36ae,b72ead1f-f38b-4116-aa92-ddf4411bb979",
           "title": "Cisco POC",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/CiscoPOC",
-          "thumbnail": "https://app.adenin.com/avatar/CP?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/CP?color=1e4471&size=52&fontSize=64",
           "imageIsAvatar": true
         },
         {
-          "id": "AZvYHA-JCx1NilhB0xQQVL0frS63i_MWQaqS3fRBG7l5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACb2BwPiQsdTYpYQdMUEFS9BQ",
+          "id": "adenin.sharepoint.com,0f1cd89b-0b89-4d1d-8a58-41d3141054bd,b72ead1f-f38b-4116-aa92-ddf4411bb979",
           "title": "Legal",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/Legal",
-          "thumbnail": "https://app.adenin.com/avatar/L?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/L?color=1e4471&size=52&fontSize=64",
           "imageIsAvatar": true
         },
         {
-          "id": "AW-kiRg2-4FFtYOBDFI3mpvv9w-pxzPCQ4QEZ2d3o6uOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvpIkYNvuBRbWDgQxSN5qbBQ",
+          "id": "adenin.sharepoint.com,1889a46f-fb36-4581-b583-810c52379a9b,a90ff7ef-33c7-43c2-8404-676777a3ab8e",
           "title": "TeamTest",
           "description": "Site",
           "link": "https://adenin.sharepoint.com/sites/TeamTest",
-          "thumbnail": "https://app.adenin.com/avatar/T?color=1e4471&size=48&fontSize=64",
+          "thumbnail": "https://app.adenin.com/avatar/T?color=1e4471&size=52&fontSize=64",
           "imageIsAvatar": true
         }
       ],
       "_settings": {},
-      "_hash": "3e1f08097eb42e0a87c97c6425e577db"
+      "_hash": "5e50da5ff5fd7887889b7c79954f3760"
     }
   preview-mode: live
   preview-container: event
